@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+    <desktop-config>
+        <theme-uri>/styles/button.css.dsp</theme-uri>
+        <theme-uri>/styles/window.css.dsp</theme-uri>
+    </desktop-config>
+</zk>

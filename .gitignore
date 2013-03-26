@@ -1,6 +1,8 @@
 *.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+/zkfoldertheme/target/classes
+/zkfoldertheme/target/maven-archiver
+/zkfoldertheme/target/zkfoldertheme
+/zkpartialoverride/target/classes
+/zkpartialoverride/target/maven-archiver
+/zkpartialoverride/target/zkpartialoverride

@@ -1,0 +1,8 @@
+Manifest-Version: 1.1
+Specification-Title: Folder-based Theme
+Specification-Version: 1.1
+Specification-Vendor: Potix Corporation
+Implementation-Title: Folder-based Theme
+Implementation-URL: http://github.com/leeyt/ZKSmalltalk/zkfoldertheme
+Implementation-Version: 1.1
+Implementation-Vendor: Potix Corporation

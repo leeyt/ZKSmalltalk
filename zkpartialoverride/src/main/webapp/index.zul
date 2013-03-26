@@ -1,0 +1,63 @@
+<borderlayout 
+	apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init('org.zkoss.demo.MainViewModel')">
+	<center>
+		<zk if='${vm.edition ne "CE"}'>
+			<caption label="ZK ${vm.version} (${vm.edition})"/>
+		</zk>
+		<vlayout>
+			<zk if='${vm.edition eq "CE"}'>
+				<label>ZK ${vm.version} (${vm.edition})</label>
+			</zk>
+		    <window id="win" title="Hello World!!" width="300px" border="normal" minimizable="true" maximizable="true" closable="true">
+		        <vlayout>
+		            <label value="CSS3 Window" />
+		        </vlayout>
+		    </window>
+			<button label="Button" mold="os"/>
+			<combobox value="Combobox">
+				<comboitem label="Simple and Rich"/>
+				<comboitem label="Cool!"/>
+				<comboitem label="Ajax and RIA"/>
+			</combobox>
+			<listbox id="box1">
+				<listhead sizable="true">
+					<listheader label="name" />
+					<listheader label="gender" sort="auto" />
+				</listhead>
+				<zk if='${vm.edition ne "CE"}'>
+					<listgroup label="Person"/>
+				</zk>
+				<listitem>
+					<listcell label="Mary" />
+					<listcell label="FEMALE" />
+				</listitem>
+				<listitem>
+					<listcell label="John" />
+					<listcell label="MALE" />
+				</listitem>
+				<listitem>
+					<listcell label="John" />
+					<listcell label="MALE" />
+				</listitem>
+				<listitem>
+					<listcell label="John" />
+					<listcell label="MALE" />
+				</listitem>
+				<zk if='${vm.edition ne "CE"}'>
+					<listgroupfoot>
+						<listcell span="2" label="Total 4 persons"/>
+					</listgroupfoot>
+				</zk>
+				<listfoot>
+					<listfooter>
+						<label value="This is footer1" />
+					</listfooter>
+					<listfooter>
+						<label value="This is footer2" />
+					</listfooter>
+				</listfoot>
+			</listbox>
+		</vlayout>
+	</center>
+</borderlayout>
