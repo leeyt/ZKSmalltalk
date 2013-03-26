@@ -1,12 +1,15 @@
+<?component name="lg" inline="true" macroURI="listgroup.zul"?>
+<?component name="lgf" inline="true" macroURI="listgroupfoot.zul"?> 
+
 <borderlayout 
 	apply="org.zkoss.bind.BindComposer"
 	viewModel="@id('vm') @init('org.zkoss.demo.MainViewModel')">
 	<center>
-		<zk if='${vm.edition ne "CE"}'>
+		<zk if='${vm.edition eq "EE"}'>
 			<caption label="ZK ${vm.version} (${vm.edition})"/>
 		</zk>
 		<vlayout>
-			<zk if='${vm.edition eq "CE"}'>
+			<zk if='${vm.edition ne "EE"}'>
 				<label>ZK ${vm.version} (${vm.edition})</label>
 			</zk>
 		    <window id="win" title="Hello World!!" width="300px" border="normal" minimizable="true" maximizable="true" closable="true">
@@ -25,9 +28,7 @@
 					<listheader label="name" />
 					<listheader label="gender" sort="auto" />
 				</listhead>
-				<zk if='${vm.edition ne "CE"}'>
-					<listgroup label="Person"/>
-				</zk>
+				<lg if='${vm.edition ne "CE"}' />
 				<listitem>
 					<listcell label="Mary" />
 					<listcell label="FEMALE" />
@@ -44,11 +45,7 @@
 					<listcell label="John" />
 					<listcell label="MALE" />
 				</listitem>
-				<zk if='${vm.edition ne "CE"}'>
-					<listgroupfoot>
-						<listcell span="2" label="Total 4 persons"/>
-					</listgroupfoot>
-				</zk>
+				<lgf if='${vm.edition ne "CE"}' />
 				<listfoot>
 					<listfooter>
 						<label value="This is footer1" />

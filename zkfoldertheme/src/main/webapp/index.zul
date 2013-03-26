@@ -1,13 +1,15 @@
+<?component name="lg" inline="true" macroURI="listgroup.zul"?>
+<?component name="lgf" inline="true" macroURI="listgroupfoot.zul"?> 
 <div width="100%" height="100%"
 	apply="org.zkoss.bind.BindComposer"
 	viewModel="@id('vm') @init('org.zkoss.demo.MainViewModel')">
 	<borderlayout>
 		<west hflex="min">
-			<zk if='${vm.edition ne "CE"}'>
+			<zk if='${vm.edition eq "EE"}'>
 				<caption label='ZK ${vm.version} (${vm.edition})'/>
 			</zk>
 			<vlayout>
-				<zk if='${vm.edition eq "CE"}'>
+				<zk if='${vm.edition ne "EE"}'>
 					<label>ZK ${vm.version} (${vm.edition})</label>
 				</zk>
 				<label>Change theme by Cookie:</label>
@@ -18,11 +20,13 @@
 		</west>
 
 		<center autoscroll="true">
-			<zk if='${vm.edition ne "CE"}'>
+			<zk if='${vm.edition eq "EE"}'>
 				<caption label="Current theme: ${vm.currentTheme}"/>
 			</zk>
 			<vlayout>
-				<label value="Current theme: ${vm.currentTheme}"/>
+				<zk if='${vm.edition ne "EE"}'>
+					<label value="Current theme: ${vm.currentTheme}"/>
+				</zk>
 			    <window id="win" title="Hello World!!" width="300px" border="normal" minimizable="true" maximizable="true" closable="true">
 			        <vlayout>
 			            <label value="CSS3 Window" />
@@ -39,9 +43,7 @@
 						<listheader label="name" />
 						<listheader label="gender" sort="auto" />
 					</listhead>
-					<zk if='${ vm.edition ne "CE" }'>
-						<listgroup label="Person"/>
-					</zk>
+					<lg if='${vm.edition ne "CE"}'/>
 					<listitem>
 						<listcell label="Mary" />
 						<listcell label="FEMALE" />
@@ -58,11 +60,7 @@
 						<listcell label="John" />
 						<listcell label="MALE" />
 					</listitem>
-					<zk if='${vm.edition ne "CE"}'>
-					<listgroupfoot>
-						<listcell span="2" label="Total 4 persons"/>
-					</listgroupfoot>
-					</zk>
+					<lgf if='${vm.edition ne "CE"}'/>
 					<listfoot>
 						<listfooter>
 							<label value="This is footer1" />
