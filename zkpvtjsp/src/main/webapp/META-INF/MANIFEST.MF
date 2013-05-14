@@ -1,0 +1,8 @@
+Manifest-Version: 0.8.0
+Specification-Title: Using ZK Pivottable inside a JSP Page
+Specification-Version: 0.8.0
+Specification-Vendor: Potix Corporation
+Implementation-Title: Using ZK Pivottable inside a JSP Page
+Implementation-URL: http://www.zkoss.org
+Implementation-Version: 0.8.0
+Implementation-Vendor: Potix Corporation
