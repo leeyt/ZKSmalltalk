@@ -1,4 +1,5 @@
 *.class
-
-/zkfoldertheme/target
-/zkpartialoverride/target
+.classpath
+.project
+*/target
+*/.settings
